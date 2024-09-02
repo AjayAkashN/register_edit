@@ -65,14 +65,6 @@ if(isset($_POST['submit'])){
     $name = $_POST['name'];
     $age = $_POST['age'];
     $date = new DateTime($_POST['dob']);
-    $dob = $date->format('Y-m-d');
-    $query = "update profile_details set name='$name',age=$age,dob='$dob',created_on=NOW() where user_id='$id'";
-   $sql=mysqli_query($conn,$query);
-    if($sql){
-        header('location:list.php');
-    }
-    else{
-        echo "Failed";
-    }
+    $dob = $date;
 }
 ?>
